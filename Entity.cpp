@@ -12,12 +12,12 @@ Entity::Entity(string n)
 	balance = 0;
 }
 
-string Entity::getName()
+string Entity::get_name()
 {
 	return name;
 }
 
-double Entity::getBalance()
+double Entity::get_balance()
 {
 	return balance / 100.0;
 }

@@ -1,4 +1,6 @@
 using namespace std;
+#include<string>
+
 
 #ifndef __ENTITY__
 #define __ENTITY__ 1
@@ -8,8 +10,8 @@ class Entity
 		Entity();
 		Entity(string n);
 
-		string getName();
-		double getBalance();
+		string get_name();
+		double get_balance();
 
 		void deposit(double in);
 		void withdraw(double out);
