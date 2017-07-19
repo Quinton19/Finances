@@ -24,10 +24,16 @@ double Entity::get_balance()
 
 void Entity::deposit(double in)
 {
+	if (in < 0)
+		throw invalid_argument("Deposit amount is less than zero");
+
 	balance += (int)(in * 100);
 }
 
 void Entity::withdraw(double out)
 {
+	if (out < 0)
+		throw invalid_argument("Withdraw amount is less than zero");
+
 	balance -= (int)(out * 100);
 }

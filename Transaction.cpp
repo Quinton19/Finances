@@ -2,5 +2,6 @@
 
 Transaction::Transaction()
 {
-	entity()
+	entity();
+	date(1970, 1, 1);
 }

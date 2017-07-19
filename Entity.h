@@ -1,6 +1,6 @@
 using namespace std;
 #include<string>
-
+#include <stdexcept>
 
 #ifndef __ENTITY__
 #define __ENTITY__ 1

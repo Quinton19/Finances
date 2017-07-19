@@ -57,25 +57,25 @@ string Date::get_month_str()
 
 string Date::get_date()
 {
-	string date = to_string(year) + "/" + to_string(month) + "/" + to_string(day);
+	string date = std::to_string(year) + "/" + std::to_string(month) + "/" + std::to_string(day);
 	return date;
 }
 
 string Date::get_date_euro()
 {
-	string date = to_string(day) + "/" + to_string(month) + "/" + to_string(year);
+	string date = std::to_string(day) + "/" + std::to_string(month) + "/" + std::to_string(year);
 	return date;
 }
 
 string Date::get_date_us()
 {
-	string date = to_string(month) + "/" + to_string(day) + "/" + to_string(year);
+	string date = std::to_string(month) + "/" + std::to_string(day) + "/" + std::to_string(year);
 	return date;
 }
 
 string Date::get_date_long()
 {
-	string date = Date::get_month_str() + " " + to_string(day) + ", " + to_string(year);
+	string date = Date::get_month_str() + " " + std::to_string(day) + ", " + std::to_string(year);
 	return date;
 }
 
