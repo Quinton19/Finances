@@ -1,5 +1,12 @@
 #include "Date.h"
 
+Date::Date()
+{
+	year = 1970;
+	month = 1;
+	day = 1;
+}
+
 Date::Date(int yr, int mn, int dy)
 {
 	year = yr;

@@ -1,5 +1,4 @@
-#include "Entity.h"
-#include "Date.h"
+#include "Transaction.h"
 #include <iostream>
 
 int main()
@@ -132,19 +131,23 @@ int main()
 
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	// Testing Transaction class
+	//Transaction transaction();
+	//Entity trans_entity();
+	//Date trans_date();
+
+	//if(transaction.get_entity())
+
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	// Final output
 	if (!pass)
 	{
 		cout << "Result: Fail\n";
-		cout << "Reasons for failure:\n" << fail_messages;
+		cout << "Reason(s) for failure:\n" << fail_messages;
 	}
 	else
 	{
 		cout << "Result: Pass\n";
 	}
-
-	cin.clear();
-	cout << "Please enter a character to exit\n";
-	char ch;
-	cin >> ch;
 }

@@ -1,8 +1,11 @@
+//#define __USE_MINGW_ANSI_STDIO 0
+
 using namespace std;
 #include <string>
 class Date
 {
 	public:
+		Date();
 		Date(int yr, int mn, int dy);
 
 		int get_year();
