@@ -1,5 +1,3 @@
-//#define __USE_MINGW_ANSI_STDIO 0
-
 using namespace std;
 #include <string>
 class Date
@@ -17,6 +15,21 @@ class Date
 		string get_date_us();
 		string get_date_long();
 		string to_string();
+
+		bool operator==(const Date& other);
+		bool operator!=(const Date& other);
+		bool operator<(const Date& other);
+		bool operator>(const Date& other);
+		bool operator<=(const Date& other);
+		bool operator>=(const Date& other);
+
+		Date& operator++();
+		Date operator++(int);
+		Date& operator--();
+		Date operator--(int);
+		
+		void add(int days);
+		void subtract(int days);
 	private:
 		int year;
 		int month;

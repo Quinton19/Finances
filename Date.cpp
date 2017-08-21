@@ -90,3 +90,150 @@ string Date::to_string()
 {
 	return Date::get_date();
 }
+
+bool Date::operator==(const Date & other)
+{
+	Date o = other;
+	if (o.get_year() == year && o.get_month() == month && o.get_day() == day)
+		return true;
+	else
+		return false;
+}
+
+bool Date::operator!=(const Date & other)
+{
+	return !(*this == other);
+}
+
+bool Date::operator<(const Date & other)
+{
+	Date o = other;
+	if (year < o.get_year())
+		return true;
+	else if (month < o.get_month())
+		return true;
+	else if (day < o.get_day())
+		return true;
+	else
+		return false;
+}
+
+bool Date::operator>(const Date & other)
+{
+	Date o = other;
+	if (year > o.get_year())
+		return true;
+	else if (month > o.get_month())
+		return true;
+	else if (day > o.get_day())
+		return true;
+	else
+		return false;
+}
+
+bool Date::operator<=(const Date & other)
+{
+	return (*this < other) || (*this == other);
+}
+
+bool Date::operator>=(const Date & other)
+{
+	return (*this > other) || (*this == other);
+}
+
+Date& Date::operator++()
+{
+	if (month == 12 && day == 31)
+	{
+		year++;
+		month = 1;
+		day = 1;
+	}
+	else if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10) && day == 31)
+	{
+		month++;
+		day = 1;
+	}
+	else if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 30)
+	{
+		month++;
+		day = 1;
+	}
+	else if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0) && month == 2 && day == 28)
+	{
+		day++;
+	}
+	else if (month == 2 && (day == 28 || day == 29))
+	{
+		month++;
+		day = 1;
+	}
+	else
+	{
+		day++;
+	}
+
+	return *this;
+}
+
+Date Date::operator++(int)
+{
+	Date result(*this);
+	++(*this);
+	return result;
+}
+
+Date& Date::operator--()
+{
+	if (month == 1 && day == 1)
+	{
+		year--;
+		month = 12;
+		day = 31;
+	}
+	else if ((month == 2 || month == 4 || month == 6 || month == 8 || month == 9 || month == 11) && day == 1)
+	{
+		month--;
+		day = 31;
+	}
+	else if ((month == 5 || month == 7 || month == 10 || month == 12) && day == 1)
+	{
+		month--;
+		day = 30;
+	}
+	else if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0) && month == 3 && day == 1)
+	{
+		month--;
+		day = 29;
+	}
+	else if (month == 3 && day == 1)
+	{
+		month--;
+		day = 28;
+	}
+	else
+	{
+		day--;
+	}
+
+	return *this;
+}
+
+Date Date::operator--(int)
+{
+	Date result(*this);
+	--(*this);
+	return result;
+}
+
+void Date::add(int days)
+{
+	for (int i = 0; i < days; i++)
+		(*this)++;
+}
+
+void Date::subtract(int days)
+{
+	for (int i = 0; i < days; i++)
+		(*this)--;
+}
